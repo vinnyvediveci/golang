@@ -1,8 +1,10 @@
 package main
+
 import (
     "fmt"
     "time"
 )
+
 func main() {
 
 i := 2
@@ -31,17 +33,30 @@ t := time.Now()
         fmt.Println("It's after noon")
     }
 
+    switch {
+	case t.Hour() >= 18 || t.Hour() <= 12:
+	    fmt.Println("It is nighttime, before midnight")
+  	default:
+	    fmt.Println("before 6pm")
+	}
+
 whatAmI := func(i interface{}) {
         switch t := i.(type) {
         case bool:
             fmt.Println("I'm a bool")
         case int:
             fmt.Println("I'm an int")
-        default:
+	case float64:
+	    fmt.Println("I'm a float64")
+	default:
             fmt.Printf("Don't know type %T\n", t)
         }
     }
+
     whatAmI(true)
     whatAmI(1)
     whatAmI("hey")
+    whatAmI(3.14)
+    whatAmI(0.1234)
+
 }
