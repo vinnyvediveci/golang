@@ -16,5 +16,12 @@ func main() {
 
 	fmt.Println("map:", m)
 
+	v1 := m["k1"]
+	fmt.Println("v1:", v1)
 
+	v3 := m["k3"] 
+	fmt.Println("v3:", v3)
+
+	// The builtin len returns the number of key/value pairs when called on a map.
+	fmt.Println("len:", len(m))
 }
